@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_testing/news_page.dart';
+import 'package:flutter_testing/news_service.dart';
 import 'package:flutter_testing/newscubit.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class FlutterTesting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NewsCubit()..getArticles(),
+      create: (context) => NewsCubit(NewsService())..getArticles(),
       child: const NewsPage(),
     );
   }

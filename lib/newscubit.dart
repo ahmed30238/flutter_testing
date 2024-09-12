@@ -4,9 +4,10 @@ import 'package:flutter_testing/news_service.dart';
 import 'package:flutter_testing/news_states.dart';
 
 class NewsCubit extends Cubit<CubitStates> {
-  NewsCubit() : super(NewsInitState());
+  NewsCubit(this._newsService) : super(NewsInitState());
 
   static NewsCubit get(context) => BlocProvider.of(context);
+  final NewsService _newsService;
   List<Article> _articles = [];
   List<Article> get articles => _articles;
 
@@ -16,7 +17,7 @@ class NewsCubit extends Cubit<CubitStates> {
   Future<void> getArticles() async {
     _isLoading = true;
     emit(GetArticleLoaingState());
-    _articles = await NewsService().getArticls();
+    _articles = await _newsService.getArticls();
     _isLoading = false;
     emit(GetArticleSuccessState());
     // todo
