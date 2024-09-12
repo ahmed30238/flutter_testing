@@ -21,6 +21,7 @@ class ArticlePage extends StatelessWidget {
             child: SafeArea(
                 child: ListView(
               children: [
+                Text(c.articles[index].title,style: const TextStyle(fontWeight: FontWeight.bold),),
                 Text(c.articles[index].content),
               ],
             )),

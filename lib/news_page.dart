@@ -68,7 +68,7 @@ class ArticleItem extends StatelessWidget {
         elevation: 10,
         shadowColor: Colors.black,
         child: SizedBox(
-          height: 180,
+          height: 120,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +81,7 @@ class ArticleItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   desc,
-                  maxLines: 10,
+                  maxLines: 5,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
